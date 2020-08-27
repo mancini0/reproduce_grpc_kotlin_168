@@ -33,11 +33,7 @@ maven_install(
     artifacts = [
         "junit:junit:4.13",
         "com.google.truth:truth:1.0.1",
-        "javax.inject:javax.inject:1",
-        "org.slf4j:slf4j-api:1.7.25",
-        "ch.qos.logback:logback-classic:1.2.3",
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:jar:1.3.8",
-        "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:jar:1.3.8",
     ] + IO_GRPC_GRPC_KOTLIN_ARTIFACTS,
     repositories = [
         "https://jcenter.bintray.com/",

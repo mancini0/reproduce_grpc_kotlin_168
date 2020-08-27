@@ -4,7 +4,6 @@ kt_jvm_library(
     name = "hello-service",
     srcs = [
         "src/main/kotlin/HelloService.kt",
-        "src/main/kotlin/MyServerInterceptor.kt"
     ],
     deps = [
         "@maven//:org_jetbrains_kotlinx_kotlinx_coroutines_core",
@@ -21,6 +20,5 @@ kt_jvm_test(
     deps=["@maven//:junit_junit",
           ":hello-service",
           "@maven//:com_google_truth_truth",
-          "@io_grpc_grpc_java//testing",
-          "@io_grpc_grpc_java//core:inprocess"]
+          "@io_grpc_grpc_java//testing"]
 )

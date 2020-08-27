@@ -9,6 +9,8 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Rule
 import org.junit.Test
 import com.google.common.truth.Truth.assertThat
+import io.grpc.ManagedChannel
+import io.grpc.Server
 
 class HelloServiceTest{
 
@@ -17,12 +19,11 @@ class HelloServiceTest{
 
     private val serverName: String = InProcessServerBuilder.generateName()
 
-    private val channel = grpcCleanup.register(InProcessChannelBuilder
+    private val channel : ManagedChannel = grpcCleanup.register(InProcessChannelBuilder
             .forName(serverName).directExecutor().build())
 
-    private val grpcServer = grpcCleanup.register(InProcessServerBuilder
+    private val grpcServer : Server= grpcCleanup.register(InProcessServerBuilder
             .forName(serverName).directExecutor()
-            //.intercept(MyServerInterceptor())
             .addService(HelloService())
             .build()).start()
 

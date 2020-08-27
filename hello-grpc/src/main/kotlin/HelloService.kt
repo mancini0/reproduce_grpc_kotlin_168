@@ -12,8 +12,4 @@ class HelloService : HelloGrpcKt.HelloCoroutineImplBase(){
                 .setGreeting("Hello there ${request.name}!").build()
     }
 
-
-    override fun streamHello(request: HelloRequest): Flow<HelloResponse>{
-        TODO()
-    }
 }
