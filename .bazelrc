@@ -1,0 +1,3 @@
+#I use an old laptop with only 2 cores so I limit the build to one core to prevent crashes :)
+build --jobs 1 --local_cpu_resources 1
+test --jobs 1 --local_cpu_resources 1 --test_output=all

@@ -1,0 +1,21 @@
+syntax = "proto3";
+package com.mancini;
+option java_package = "com.mancini.proto.hello";
+
+message HelloRequest{
+  string name =1;
+}
+
+message HelloResponse{
+  string greeting =2;
+}
+
+
+
+
+service Hello {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+  rpc StreamHello (HelloRequest) returns (stream HelloResponse);
+}
+
+
